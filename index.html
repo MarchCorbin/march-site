@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corbin March - Web Developer</title>
+    <!-- Chart.js and Luxon for time parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2/build/global/luxon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="weather-app/weather-icons/css/weather-icons.css">
+    <link rel="stylesheet" href="crypto-app/style.css"> <!-- Corrected slashes -->
+    <link rel="stylesheet" href="nyse-app/style.css">
+    <link rel="stylesheet" href="weather-app/style.css">
+    <link rel="stylesheet" href="pong-app/style.css">
+    <link rel="stylesheet" href="stockticker-app/style.css">
+    <link rel="stylesheet" href="typing-app/style.css">
+    <link rel="stylesheet" href="tictac-app/style.css">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#crypto-widget">Crypto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h1>Hi, I'm Corbin March</h1>
+        <p>Turning code into creativity</p>
+    </section>
+
+    <section id="projects">
+        <h2>Mini Projects</h2>
+
+        <!-- Weather Widget HTML -->
+        <div id="weather-widget" class="widget">
+            <div id="location" class="current-location"></div>
+            <p id="current-time"></p>
+            <div id="current-weather" class="current-weather">
+                <!-- Current Weather Info Here -->
+            </div>
+        
+            <div id="hourly-forecast-container">
+                <h3>24-Hour Forecast</h3>
+                <div id="hourly-forecast" class="horizontal-scroll"></div>
+            </div>
+        
+            <div id="forecast-container" class="forecast-container">
+                <!-- 7-Day Forecast Here -->
+            </div>
+        </div>
+        
+
+        <!-- Crypto Widget HTML -->
+        <div id="crypto-widget">
+            <h3>Top 3 Cryptocurrencies</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Coin</th>
+                        <th>Price (USD)</th>
+                        <th>24h Change</th>
+                        <th>MTD Change</th> <!-- New column -->
+                        <th>YTD Change</th> <!-- New column -->
+                    </tr>
+                </thead>
+                <tbody id="crypto-table">
+                    <!-- Data will be populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <div id="nyse-widget" style="display: none;">
+            <input type="text" id="stock-symbol" placeholder="Enter stock symbol (e.g., TSLA)">
+            <button onclick="getStockData()">Get Stock</button>
+            <div id="nyse-price"></div>
+            <div id="nyse-change"></div>
+            <canvas id="stockChart"></canvas>
+
+            <!-- Stock Ticker Section -->
+            <div class="stock-ticker-container">
+                <div id="stock-ticker">
+                  <p id="ticker-content">Loading stock data...</p>
+                </div>
+              </div>
+        </div>
+
+          
+        <div class="mini-projects-container">
+            <div class="mini-project">
+                <div class="tic-tac-toe-widget">
+                    <div class="game-container">
+                        <h1>Tic Tac Toe</h1>
+                
+                        <div class="scoreboard">
+                            <p>X Wins: <span id="x-score">0</span></p>
+                            <p>O Wins: <span id="o-score">0</span></p>
+                        </div>
+                
+                        <div class="game-board">
+                            <div class="cell" data-index="0"></div>
+                            <div class="cell" data-index="1"></div>
+                            <div class="cell" data-index="2"></div>
+                            <div class="cell" data-index="3"></div>
+                            <div class="cell" data-index="4"></div>
+                            <div class="cell" data-index="5"></div>
+                            <div class="cell" data-index="6"></div>
+                            <div class="cell" data-index="7"></div>
+                            <div class="cell" data-index="8"></div>
+                        </div>
+                
+                        <button id="reset-button">Reset Game</button>
+                    </div>
+                </div>        
+              <div id="tic-tac-toe"></div>
+            </div>
+            
+            <div class="mini-project">
+                <div id="typing-test-widget" class="widget-container">
+                    <h2>Speed Typing Test</h2>
+                    <p id="random-text"></p>
+                    
+                    <input type="text" id="user-input" placeholder="Start typing here..." disabled />
+                    
+                    <div id="test-info">
+                        <p>Time Left: <span id="timer">60</span> seconds</p>
+                        <p>Words Per Minute (WPM): <span id="wpm">0</span></p>
+                        <p>Accuracy: <span id="accuracy">100%</span></p>
+                    </div>
+                    
+                    <div class="button-container">
+                        <button id="start-test-btn" class="btn">Start Test</button>
+                        <button id="submit-test-btn" class="btn" disabled>Submit Test</button>
+                    </div>
+                </div>
+              <div id="speed-typing"></div>
+            </div>
+            
+            <div class="mini-project">
+                <div id="pong-widget">
+                    <h1 id="pong-title">Pong Survival</h1>
+                    <canvas id="pong-canvas" width="600" height="400"></canvas>
+                    <div id="start-menu">
+                        <button id="start-btn" onclick="startGame()">Start Game</button>
+                        <button id="reset-btn" onclick="resetGame()">Reset Game</button>
+                    </div>
+                    <div id="pong-score"></div>
+                </div>
+              <div id="pong-survival"></div>
+            </div>
+          </div> 
+          
+         
+        
+        
+        
+        
+        
+        
+        
+        
+    </section>
+
+    <footer>
+        <p>© 2024 Corbin March. All rights reserved.</p>
+    </footer>
+
+    <!-- Load JavaScript files -->
+    <script src="weather-app/script.js"></script>
+    <script src="crypto-app/script.js"></script>
+    <script src="nyse-app/script.js"></script>
+    <script src="pong-app/script.js"></script>
+    <script src="stockticker-app/script.js"></script>
+    <script src="typing-app/script.js"></script>
+    <script src="tictac-app/script.js"></script>
+
+
+    <script>
+        window.onload = function() {
+            getUserLocation();  // Weather function
+            getTopCryptos();
+            setInterval(getTopCryptos, 60000);   // Crypto function
+            getNYSEData('IBM');
+        };
+    </script>
+</body>
+</html>

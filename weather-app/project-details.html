@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - Corbin March</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html#projects">Back to Projects</a></li>
+                <li><a href="../index.html#about">About Me</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="project-details">
+        <h1>Weather App</h1>
+        <p>Automatically detects your location and displays the current weather using the OpenWeatherMap API.</p>
+        
+        <h2>Features</h2>
+        <ul>
+            <li>Geolocation to detect user’s location</li>
+            <li>Real-time weather data fetching</li>
+            <li>Responsive design for various devices</li>
+        </ul>
+
+        <h2>Technologies Used</h2>
+        <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>OpenWeatherMap API</li>
+        </ul>
+
+        <h2>Code Breakdown</h2>
+        <p>Here's a brief overview of how the weather app works:</p>
+        <pre><code>
+// Fetch user's geolocation
+navigator.geolocation.getCurrentPosition(getWeatherByLocation, handleLocationError);
+
+// Fetch weather data using coordinates
+function getWeatherByLocation(position) {
+    const { latitude, longitude } = position.coords;
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`)
+        .then(response => response.json())
+        .then(data => {
+            // Update UI with weather data
+            displayWeather(data);
+        })
+        .catch(err => console.error(err));
+}
+
+// Display weather data on the page
+function displayWeather(data) {
+    const weatherHTML = `
+        <h2>${data.name}</h2>
+        <p>Temperature: ${data.main.temp}°C</p>
+        <p>Weather: ${data.weather[0].description}</p>
+        <p>Humidity: ${data.main.humidity}%</p>
+        <p>Wind Speed: ${data.wind.speed} m/s</p>
+        <p id="wind">Loading wind data...</p>
+        <p id="humidity">Loading humidity data...</p>
+
+    `;
+    document.getElementById('weatherResult').innerHTML = weatherHTML;
+}
+        </code></pre>
+
+        <h2>Live Demo</h2>
+        <p>You can try the Weather App <a href="index.html">here</a>.</p>
+
+        <h2>GitHub Repository</h2>
+        <p><a href="https://github.com/yourusername/weather-app">View on GitHub</a></p>
+    </section>
+
+    <footer>
+        <p>© 2024 Corbin March. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+.game-container {
+    background-color: #3b3b3b;
+    border: none; /* Removed the yellow border */
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: bounceIn 1s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensures everything is centered */
+    justify-content: center;
+}
+
+/* Scoreboard Styling */
+.scoreboard p {
+    font-size: 20px;
+    color: #f5ba13;
+    margin: 10px 0;
+}
+
+/* Game Board Styling */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px;
+    margin: 20px auto;
+    justify-content: center; /* This centers the game board grid */
+}
+
+.cell {
+    background-color: #1a1a1a;
+    border: 2px solid #555;
+    width: 100px;
+    height: 100px;
+    font-size: 48px;
+    color: #f5ba13;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cell:hover {
+    background-color: #333;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #f5ba13;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ffc63d;
+}
+
+/* Optional Bounce Animation for widget entry */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Media Queries for responsiveness */
+@media screen and (max-width: 600px) {
+    .game-board {
+        grid-template-columns: repeat(3, 80px);
+        grid-gap: 8px;
+    }
+
+    .cell {
+        width: 80px;
+        height: 80px;
+        font-size: 36px;
+    }
+}

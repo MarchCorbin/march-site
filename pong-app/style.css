@@ -1,0 +1,100 @@
+#pong-widget {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    width: 600px;
+    margin: 0 auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+#pong-title {
+    font-size: 32px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#pong-canvas {
+    display: block;
+    background-color: black;
+    border: 2px solid white;
+}
+
+
+#scoreboard {
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+#start-menu {
+    margin-bottom: 20px;
+}
+
+#start-btn {
+    margin-top: 20px;  /* Space between the button and the canvas */
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    border: none;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#start-btn:hover {
+    background-color: #f2a30f;
+}
+
+/* Button styling */
+#start-btn, #reset-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    border: none;
+    color: black;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Hover effect for buttons */
+#start-btn:hover, #reset-btn:hover {
+    background-color: #f2a30f;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Initially hide reset button */
+#reset-btn {
+    display: none;
+}
+
+
+
+/* Styling for the scoreboard displayed between the paddles */
+#pong-score {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}

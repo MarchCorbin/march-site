@@ -1,0 +1,61 @@
+@keyframes bounceIn {
+    0% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+#crypto-widget {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    margin: 20px 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Adjust transition */
+}
+
+#crypto-widget:hover {
+    transform: translateY(-10px);  /* Smooth movement */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+#crypto-widget table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#crypto-widget th, #crypto-widget td {
+    padding: 10px;
+    border: 1px solid #555;
+}
+
+#crypto-widget th {
+    background-color: #444;
+}
+
+#crypto-widget td {
+    font-size: 1.1em;
+}
+
+#crypto-widget td a:hover {
+    color: #f5ba13;  /* Add a hover effect */
+}
+
+#crypto-widget img {
+    border-radius: 50%;  /* Make the icons circular */
+    transition: transform 0.3s ease;
+}
+
+#crypto-widget img:hover {
+    transform: scale(1.2);  /* Slightly enlarge the icon on hover */
+}

@@ -1,0 +1,159 @@
+/* Existing homepage styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #2c2c2c;
+    color: white;
+}
+
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+section#hero {
+    background-color: #f5ba13;
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+section#projects {
+    padding: 50px;
+    text-align: center;
+}
+
+/* Original styling for homepage restored */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+section#projects {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 50px;
+    text-align: center;
+}
+
+.widget, .widget-container, .tic-tac-toe-widget, #pong-widget, #crypto-widget, #nyse-widget {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid #f5ba13;
+}
+
+.widget h2, .widget-container h2, .tic-tac-toe-widget h1, #pong-title, #crypto-widget h3 {
+    color: #f5ba13;
+}
+
+button {
+    background-color: #f5ba13;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e09e0e;
+}
+
+.game-board, #pong-canvas, .typing-test-container, .widget-container {
+    margin: 0 auto;
+}
+
+.tic-tac-toe-widget .game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.tic-tac-toe-widget .cell {
+    width: 80px;
+    height: 80px;
+    background-color: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: #f5ba13;
+}
+
+@media screen and (max-width: 768px) {
+    section#projects {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+    
+    .widget, .widget-container, .tic-tac-toe-widget, #pong-widget, #crypto-widget, #nyse-widget {
+        padding: 10px;
+    }
+
+    .tic-tac-toe-widget .cell {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}
+
+button {
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e09e0e;
+    transform: scale(1.05);
+}
+
+.mini-projects-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  
+  .mini-project {
+    flex: 1 1 30%;  /* Adjust this for responsive layout */
+    margin: 10px;
+  }
+  
+  #nyse-widget, .mini-project {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #34495e;
+    color: white;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  
+
+
+
+
+

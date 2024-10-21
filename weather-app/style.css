@@ -1,0 +1,232 @@
+/* General widget styling */
+#weather-widget {
+    background-color: #333;
+    padding: 20px;
+    color: #f5f5f5;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 30px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Bounce effect on hover */
+#weather-widget:hover {
+    transform: translateY(-5px);
+}
+
+/* Style for the current day block */
+.current-day {
+    background-color: rgba(248, 237, 237, 0.2);  /* Highlight color */
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+
+/* Current weather styling */
+.current-weather {
+    font-size: 1.5rem;
+    border: none; /* Ensure there is no border */
+}
+
+
+.current-weather img {
+    width: 80px;
+    height: 80px;
+}
+
+/* Make the 7-day forecast scrollable if necessary */
+.forecast-container {
+    display: flex;
+    justify-content: center;  /* Center the forecast horizontally */
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.forecast-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 8px;
+    margin: 5px;
+    min-width: 100px;
+}
+
+.forecast-day.current-day {
+    background-color: rgba(255, 255, 255, 0.2);  /* Highlight color */
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+
+.forecast-day:hover {
+    transform: translateY(-5px);
+    background-color: #555;
+}
+
+.forecast-day img {
+    margin-bottom: 10px;
+}
+
+.forecast-day .day {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.forecast-day p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+.forecast-day .temp {
+    margin-top: 5px;
+}
+
+.forecast-day, .hourly-forecast-item {
+    min-width: 100px;
+    margin: 0 5px;
+    text-align: center;
+}
+
+.forecast-item a, .hourly-forecast-item a {
+    color: white;
+    text-decoration: none;
+}
+
+.forecast-item a:hover, .hourly-forecast-item a:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1); /* Optional hover effect */
+}
+
+/* Remove default link styling and set text to white */
+a.forecast-day, a.hourly-forecast-item {
+    text-decoration: none;  /* Remove the underline */
+    color: white;  /* Set text to white */
+    display: block;  /* Make the entire card clickable */
+}
+
+/* Add a hover effect if desired */
+a.forecast-day:hover, a.hourly-forecast-item:hover {
+    background-color: #444;  /* Slightly darker background on hover */
+    color: white;  /* Keep the text white on hover */
+}
+
+/* Style the current day and current hour */
+.current-day, .current-hour {
+    font-weight: bold;
+    background-color: #555;  /* Highlight current day or hour */
+}
+
+/* Hourly forecast styling */
+.hourly-forecast {
+    display: flex;
+    justify-content: center;  /* Center hourly forecast */
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    margin-top: 20px;
+}
+
+#hourly-forecast-container:hover .horizontal-scroll {
+    overflow-x: auto;
+}
+
+#hourly-forecast-container {
+    margin-top: 20px;
+    text-align: center;
+    overflow-x: auto;
+}
+
+.horizontal-scroll {
+    display: flex;
+    overflow-x: hidden;
+    padding: 10px 0;
+    scroll-behavior: smooth;
+    transition: overflow 0.3s ease;
+}
+
+.hourly-forecast-item {
+    display: inline-block;
+    min-width: 80px;
+    margin: 0 10px;
+    text-align: center;
+}
+
+.hourly-forecast-item:hover, .forecast-day:hover {
+    transform: translateY(-5px);
+}
+
+.hourly-forecast-item img {
+    width: 40px;
+    height: 40px;
+}
+
+.hourly-forecast-item p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+#hourly-forecast-container h3 {
+    margin-bottom: 10px;
+}
+
+/* Style for the current time block */
+.current-hour {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    font-weight: bold;  /* Ensure the current time is bold */
+}
+
+#current-time {
+    font-weight: bold;
+    font-size: 25px;  /* Adjust the size as needed */
+}
+
+
+/* Ensure the container is scrollable */
+.hourly-forecast-container, .forecast-container {
+    overflow-x: auto;  /* Make horizontal scrollbars appear */
+    white-space: nowrap; /* Ensure content doesn't wrap */
+}
+
+
+/* WebKit Scrollbar Styling */
+.hourly-forecast-container::-webkit-scrollbar,
+.forecast-container::-webkit-scrollbar {
+    height: 8px; /* Horizontal scrollbar height */
+    background-color: #333; /* Track background color */
+}
+
+.hourly-forecast-container::-webkit-scrollbar-thumb,
+.forecast-container::-webkit-scrollbar-thumb {
+    background-color: #555; /* Thumb color */
+    border-radius: 10px; /* Roundness */
+}
+
+.hourly-forecast-container::-webkit-scrollbar-thumb:hover,
+.forecast-container::-webkit-scrollbar-thumb:hover {
+    background-color: #777; /* Hover effect */
+}
+
+.forecast-container a, 
+.hourly-forecast a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.forecast-container a:hover, 
+.hourly-forecast a:hover {
+    background-color: #555; /* Ensure hover effect applies to the link */
+    transform: translateY(-5px);
+}
+
+
+
+
+
+
+
+

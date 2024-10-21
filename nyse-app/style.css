@@ -1,0 +1,40 @@
+#nyse-widget {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #34495e;
+    color: white;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+    position: relative;
+}
+
+#nyse-widget input, #nyse-widget button {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+#nyse-widget button {
+    background-color: #27ae60;
+    color: white;
+    cursor: pointer;
+}
+
+#nyse-widget button:hover {
+    background-color: #2ecc71;
+}
+
+canvas {
+    margin-top: 20px;
+}
+
+#stockChart {
+    width: 100%;  /* Ensure it takes the full width */
+    height: 400px;  /* Set a specific height for the chart */
+    margin-top: 20px;
+}
+
+
+
